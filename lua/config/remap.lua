@@ -5,3 +5,5 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "project files"})
 vim.keymap.set('i', '<C-v>', '<C-r>+', { desc = 'Paste from system clipboard' }) -- Insert mode
 vim.keymap.set('n', '<C-v>', '"+p', { desc = 'Paste from system clipboard' })    -- Normal mode
 vim.keymap.set('c', '<C-v>', '<C-r>+', { desc = 'Paste from system clipboard' }) -- Command mode
+
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Find and replace'})

@@ -1,9 +1,18 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "project files"})
 
--- Remap <C-v> to paste from system clipboard
-vim.keymap.set('i', '<C-v>', '<C-r>+', { desc = 'Paste from system clipboard' }) -- Insert mode
-vim.keymap.set('n', '<C-v>', '"+p', { desc = 'Paste from system clipboard' })    -- Normal mode
-vim.keymap.set('c', '<C-v>', '<C-r>+', { desc = 'Paste from system clipboard' }) -- Command mode
+local map = vim.keymap.set
+map("n", "<leader>q", ":qa!<CR>", { desc = "quit" })
+map("n", "<leader>s", ":w<CR>", { desc = "save" })
+map("n", "<leader>pv", vim.cmd.Ex, { desc = "project files" })
 
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Find and replace'})
+-- Telescope
+local builtin = require("telescope.builtin")
+map("n", "<leader>ff", builtin.find_files, { desc = "Open Telescope to find files" })
+map("n", "<leader>fg", builtin.live_grep, { desc = "Open Telescope to do live grep" })
+map("n", "<leader>fb", builtin.buffers, { desc = "Open Telescope to list buffers" })
+map("n", "<leader>fh", builtin.help_tags, { desc = "Open Telescope to show help" })
+map("n", "<leader>fo", builtin.oldfiles, { desc = "Open Telescope to list recent files" })
+map("n", "<leader>cm", builtin.git_commits, { desc = "Open Telescope to list git commits" })
+map('n', '<leader>ps', function()
+    builtin.grep_string({ search = vim.fn.input("Grep > ") })
+end)

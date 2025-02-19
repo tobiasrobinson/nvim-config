@@ -2,6 +2,7 @@ vim.g.mapleader = " "
 
 local map = vim.keymap.set
 map("n", "<leader>q", ":qa!<CR>", { desc = "quit" })
+map("n", "<leader>x", ":q<CR>", { desc = "close file" })
 map("n", "<leader>s", ":w<CR>", { desc = "save" })
 map("n", "<leader>pv", vim.cmd.Ex, { desc = "project files" })
 
@@ -16,3 +17,7 @@ map("n", "<leader>cm", builtin.git_commits, { desc = "Open Telescope to list git
 map('n', '<leader>ps', function()
     builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end)
+-- NvimTree
+map("n", "<leader>n", ":NvimTreeToggle<CR>", { desc = "Toggle NvimTree sidebar" })    -- open/close
+map("n", "<leader>nr", ":NvimTreeRefresh<CR>", { desc = "Refresh NvimTree" })         -- refresh
+map("n", "<leader>nf", ":NvimTreeFindFile<CR>", { desc = "Search file in NvimTree" }) -- search file

@@ -13,13 +13,14 @@ https://seanaujong.medium.com/setting-up-neovim-in-wsl-e133b2a38dbf
 
 ### Dependencies
 
-- gcc
-- make
+- gcc: c
+- make: c
 - git
-- ripgrep
-- fd
+- ripgrep: search
+- fd: search
 - unzip
 - neovom
+- yazi: file explorer
 
 ### Arch
 

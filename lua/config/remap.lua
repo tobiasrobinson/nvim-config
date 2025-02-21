@@ -17,7 +17,7 @@ map("n", "<leader>cm", builtin.git_commits, { desc = "Open Telescope to list git
 map('n', '<leader>ps', function()
     builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end)
--- NvimTree
-map("n", "<leader>n", ":NvimTreeToggle<CR>", { desc = "Toggle NvimTree sidebar" })    -- open/close
-map("n", "<leader>nr", ":NvimTreeRefresh<CR>", { desc = "Refresh NvimTree" })         -- refresh
-map("n", "<leader>nf", ":NvimTreeFindFile<CR>", { desc = "Search file in NvimTree" }) -- search file
+
+-- Comment
+map("n", "mm", "gcc", { desc = "Toggle comment", remap = true })
+map("v", "mm", "gc", { desc = "Toggle comment", remap = true })

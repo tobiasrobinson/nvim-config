@@ -46,7 +46,7 @@ opt.splitbelow = true  -- open new split below
 opt.splitright = true  -- open new split to the right
 opt.wrap = true        -- display a wrapped line
 opt.guicursor = ""
-opt.relativenumber = true --relative line numbers  
+opt.relativenumber = true --relative line numbers
 opt.signcolumn = "yes"
 opt.isfname:append("@-@")
 opt.updatetime = 50
@@ -59,5 +59,3 @@ opt.writebackup = false -- if a file is being edited by another program (or was 
 
 -- theme
 opt.termguicolors = true --enable 24-bit RGB
---cmd.colorscheme("rose-pine")
-
